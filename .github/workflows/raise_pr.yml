@@ -1,0 +1,12 @@
+name: raise pull request using github actions
+on:[merge]
+
+jobs:
+  Raise pull request:
+    runs-on: ubuntu-latest
+    steps:
+      - name: raise pr
+        run: bash ./scripts/pr.bash
+    
+  
+
