@@ -5,6 +5,8 @@ jobs:
   Raise__pull_request:
     runs-on: ubuntu-latest
     steps:
+      - name: checkout
+        run: actions/checkout@v3
       - name: raise pr
         run: bash ./scripts/pr.bash
     
