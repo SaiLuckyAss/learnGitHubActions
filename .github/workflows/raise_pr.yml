@@ -1,14 +1,26 @@
-name: raise pull request using github actions
+name: ci 
 on: [push]
 
 jobs:
-  Raise__pull_request:
+  Build_And_Unit_test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
         uses: actions/checkout@v3
-      - name: raise pr
-        run: bash ./scripts/pr.bash
+      - name: set up jdk
+        uses: actions/setup-java@v2
+        with: 
+          java-version: '17'
+      - name: maven build artifacts
+        run: |
+          mvn clean install -f ./demoGitHub/demoGitHub/pom.xml
+        shell: bash
+      - name: Temp checking files
+        run: |
+          cd demoGitHub/target
+          ls
+
+        
     
   
 
