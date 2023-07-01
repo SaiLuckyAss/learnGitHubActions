@@ -1,8 +1,8 @@
 name: raise pull request using github actions
-on:[merge]
+on: [push]
 
 jobs:
-  Raise pull request:
+  Raise__pull_request:
     runs-on: ubuntu-latest
     steps:
       - name: raise pr
