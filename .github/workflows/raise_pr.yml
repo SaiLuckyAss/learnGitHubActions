@@ -20,6 +20,12 @@ jobs:
         run: |
           cd demoGitHub/target
           ls
+      - name: run jar
+        run: |
+          cd demoGitHub/target
+          java -jar demoGitHub-0.0.1-SNAPSHOT.jar
+          curl -H "" "localhost:8080/home"
+        shell: bash
 
         
     
