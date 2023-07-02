@@ -24,6 +24,7 @@ class controllerTest {
         //mvc = MockMvcBuilders.webAppContextSetup(webApplicationContext).build();
         MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/home")
                 .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
+        assertNotNull(mvcResult.getResponse());
     }
 
 }
