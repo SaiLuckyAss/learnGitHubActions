@@ -2,7 +2,7 @@ name: ci
 on: [push]
 
 jobs:
-  Build_And_Unit_test:
+  Build_And_Test:
     runs-on: ubuntu-latest
     steps:
       - name: checkout
@@ -20,12 +20,11 @@ jobs:
         run: |
           cd demoGitHub/target
           ls
-      - name: run jar
-        run: |
-          cd demoGitHub/target
-          java -jar demoGitHub-0.0.1-SNAPSHOT.jar
-          curl -H "" "localhost:8080/home"
-        shell: bash
+      - name: code quality
+        env:
+          GITHUB_TOKEN: ${{ secrets.GIT_SAML_TOKEN }}  # Needed to get PR information, if any
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.branch.name=main -Dsonar.projectKey=SaiLuckyAss_learnGitHubActions -f ./demoGitHub/pom.xml
 
         
     
