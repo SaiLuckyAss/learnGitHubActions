@@ -25,6 +25,17 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GIT_SAML_TOKEN }}  # Needed to get PR information, if any
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.branch.name=main -Dsonar.projectKey=SaiLuckyAss_learnGitHubActions -f ./demoGitHub/pom.xml
+      - name: login to ghcr
+        uses: docker/login-action@2.1.0
+        with:
+          registry: ghcr.io
+          username: ${{secrets.GIT_SAML_TOKEN}}
+          password: ${{secrets.GIT_SAML_USER}}
+      - name: build and push docker image
+        run: |
+          docker build -f ./app.Dockerfile . -t imageName:1.0 
+          docker tag imageName:1.0 ghcr.io/SaiLuckyAss/learnGitHubActions/imageName:1.0
+          docker push ghcr.io/SaiLuckyAss/learnGitHubActions/imageName:1.0
 
         
     
