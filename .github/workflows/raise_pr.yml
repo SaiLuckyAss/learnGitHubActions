@@ -26,7 +26,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: mvn -B verify org.sonarsource.scanner.maven:sonar-maven-plugin:sonar -Dsonar.branch.name=main -Dsonar.projectKey=SaiLuckyAss_learnGitHubActions -f ./demoGitHub/pom.xml
       - name: login to ghcr
-        uses: docker/login-action@2.1.0
+        uses: docker/login-action@v2
         with:
           registry: ghcr.io
           username: ${{secrets.GIT_SAML_TOKEN}}
