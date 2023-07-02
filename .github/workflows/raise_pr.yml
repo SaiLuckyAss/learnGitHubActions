@@ -40,7 +40,7 @@ jobs:
           ls
           docker build -f ./app.Dockerfile . -t imagename:1.0 
           docker tag imagename:1.0 ghcr.io/SaiLuckyAss/learnGitHubActions/imagename:1.0
-          docker push ghcr.io/SaiLuckyAss/learnGitHubActions/imagename:1.0
+          docker push ghcr.io/SaiLuckyAss/learngithubactions/imagename:1.0
         shell: bash
 
         
