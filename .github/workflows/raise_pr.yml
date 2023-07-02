@@ -31,6 +31,8 @@ jobs:
           registry: ghcr.io
           username: ${{secrets.GIT_SAML_USER}}
           password: ${{secrets.GIT_SAML_TOKEN}}
+      - name: Ls
+        run: ls
       - name: build and push docker image
         run: |
           docker build -f ../app.Dockerfile . -t imagename:1.0 
