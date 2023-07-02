@@ -35,6 +35,8 @@ jobs:
         run: ls
       - name: build and push docker image
         run: |
+          pwd
+          ls
           docker build -t imagename:1.0 app.Dockerfile
           docker tag imagename:1.0 ghcr.io/SaiLuckyAss/learnGitHubActions/imagename:1.0
           docker push ghcr.io/SaiLuckyAss/learnGitHubActions/imagename:1.0
