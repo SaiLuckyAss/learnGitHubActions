@@ -1,1 +1,1 @@
-# learnGitHubActions
+# learnGitHubActions be cool
