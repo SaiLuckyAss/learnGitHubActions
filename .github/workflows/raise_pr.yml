@@ -18,7 +18,7 @@ jobs:
           distribution: 'adopt'
       - name: maven build artifacts
         run: |
-          mvn clean install -f ./demoGitHub/pom.xml
+          mvn clean install -f ./demoGitHub/pom.xml -s ./s.xml
         shell: bash
       - name: Temp checking files
         run: |
