@@ -42,9 +42,9 @@ jobs:
         run: |
           pwd
           ls
-          docker build -f ./app.Dockerfile . -t imagename:v1.1 
-          docker tag imagename:v1.1 ghcr.io/sailuckyass/learngithubactions/imagename:v1.1
-          docker push ghcr.io/sailuckyass/learngithubactions/imagename:v1.1
+          docker build -f ./app.Dockerfile . -t imagename-m:v1.1 
+          docker tag imagename-m:v1.1 ghcr.io/sailuckyass/learngithubactions/imagename-m:v1.1
+          docker push ghcr.io/sailuckyass/learngithubactions/imagename-m:v1.1
         shell: bash
 
         
