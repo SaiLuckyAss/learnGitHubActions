@@ -6,5 +6,5 @@ jobs:
     steps:
       - name: send msg to teams
         run: |
-          curl -H 'Content-Type: application/json' -d "{\"text\":\"Hello, World!\"}" https://grietprincipal.webhook.office.com/webhookb2/7111cb13-012b-41e8-b33b-376a6d610c35@2c6c5ba1-3a7c-42f1-a301-195c7e9585e2/IncomingWebhook/fdad568b3f8f45d48285c34c8ee2d496/a279dff7-7d9a-4de3-a9b7-f4e885145f94
+          curl -H 'Content-Type: application/json' -d "{\"text\":\"Hello, World gusa !\"}" https://grietprincipal.webhook.office.com/webhookb2/7111cb13-012b-41e8-b33b-376a6d610c35@2c6c5ba1-3a7c-42f1-a301-195c7e9585e2/IncomingWebhook/fdad568b3f8f45d48285c34c8ee2d496/a279dff7-7d9a-4de3-a9b7-f4e885145f94
         shell: bash
