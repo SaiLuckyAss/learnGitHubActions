@@ -1,0 +1,11 @@
+name: manual trigger
+on:
+  workflow_dispatch
+jobs:
+    Trigger-manually-workflow:
+      name: step1
+      runs-on: ubuntu-latest
+      steps:
+        - name: SayHi
+          run: echo "Hi
+  
