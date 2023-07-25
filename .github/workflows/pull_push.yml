@@ -1,0 +1,23 @@
+name: pull and push
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  Pull_and_Push_Job:
+    name: pull and push job
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository ck
+        uses: actions/checkout@v1
+      - name: Create PR
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "release"
+          github_token: ${{secrets.GIT_SAML_TOKEN}}
+          pr_title: "Merging dev to release"
+          pr_body: "Merging dev to rel"
+          
+    
+  
