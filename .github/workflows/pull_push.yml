@@ -1,0 +1,12 @@
+name: pull and push
+
+on:
+  push:
+    branches:
+      - dev
+jobs:
+  Pull and Push Job
+    name: pull and push job
+    runs-on: ubuntu-latest
+    
+  
