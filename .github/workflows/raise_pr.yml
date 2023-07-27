@@ -54,8 +54,8 @@ jobs:
           login-server: ghcr.io
       - name: pull image from ghcr
         run: |
-          echo docker pull ghcr.io/imagename-mmm:v1.1
-          docker pull ghcr.io/imagename-mmm:v1.1
+          echo docker pull ghcr.io/sailuckyass/learngithubactions/imagename-mmm:v1.1
+          docker pull ghcr.io/sailuckyass/learngithubactions/imagename-mmm:v1.1
         shell: bash
         
 
