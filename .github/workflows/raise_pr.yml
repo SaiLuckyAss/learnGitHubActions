@@ -4,11 +4,15 @@ on:
     branches:
       - main
       - main
-
+env:
+  app: ${GITHUB_BASE_REF}
 jobs:
   Build_And_Test:
     runs-on: [ubuntu-latest]
     steps:
+      - name: env
+        run: |
+          echo ${{ env.app }}
       - name: checkout
         uses: actions/checkout@v3
       - name: set up jdk
@@ -18,7 +22,7 @@ jobs:
           distribution: 'adopt'
       - name: maven build artifacts
         run: |
-          mvn clean install -f ././demoGitHub/pom.xml -s .//
+          mvn clean install -f ././demoGitHub/pom.xml -s .// 
         shell: bash
       - name: Temp checking files
         run: |
