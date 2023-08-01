@@ -1,15 +1,8 @@
 name: "teams message"
-on: [push]
+on: [workflow_dispatch]
 jobs:
   Build_And_Test:
     runs-on: [ubuntu-latest]
-    inputs:
-      param1:
-        description: 'Description for param1'
-        required: true
-      param2:
-        description: 'Description for param2'
-        required: true
     steps:
       - name: send msg to teams
         run: |
