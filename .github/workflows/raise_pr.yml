@@ -4,6 +4,8 @@ on:
     branches:
       - main
       - main
+    paths:
+      - "/**"
 env:
   app: ${GITHUB_BASE_REF}
 jobs:
